@@ -1,0 +1,21 @@
+<h1>Big Boxers</h1>
+<%= link_to 'New Boxer', new_boxer_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th></th>
+  </tr>
+
+  <% @boxers.each do |boxer| %>
+    <tr>
+      <td><%= boxer.name %></td>
+      <td><%= boxer.weight %></td>
+      <td><%= link_to 'Show', boxer_path(boxer) %></td>
+      <td><%= link_to 'Edit', edit_boxer_path(boxer) %></td>
+      <td><%= link_to 'Destroy', boxer_path(boxer),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

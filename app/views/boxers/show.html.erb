@@ -1,0 +1,35 @@
+<p>
+  <strong>Name:</strong>
+  <%= @boxer.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @boxer.weight %>
+</p>
+
+<h2>Comments</h2>
+<% @boxer.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<!-- tut pomulka -->
+<h2>Add a comment:</h2>
+
+<%= form_for @boxer do |f| %>
+ 
+  Commenter: <%= f.text_field :commenters %><br />
+  Body : <%= f.text_field :body %><br />
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_boxer_path(@boxer) %> |
+<%= link_to 'Back', boxers_path %>
