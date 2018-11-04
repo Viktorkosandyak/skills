@@ -21,12 +21,11 @@
   </p>
 <% end %>
 
-<!-- tut pomulka -->
 <h2>Add a comment:</h2>
 
-<%= form_for @boxer do |f| %>
+<%= form_for [@boxer, @boxer.comments.build] do |f| %>
  
-  Commenter: <%= f.text_field :commenters %><br />
+  Commenter: <%= f.text_field :commenter %><br />
   Body : <%= f.text_field :body %><br />
   <%= f.submit %>
 <% end %>
